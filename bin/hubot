@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+export HUBOT_HIPCHAT_JID="JABBER_ID_OF_USER"
+export HUBOT_HIPCHAT_PASSWORD="PASSWORD"
+export HUBOT_HIPCHAT_ROOMS="All"
+export HUBOT_HIPCHAT_TEMP_ALERT_ROOM_JID="ROOM_JABBER_ID"
+export PORT="4000"
+
+
+exec node_modules/.bin/hubot --name "spribot" "$@"
